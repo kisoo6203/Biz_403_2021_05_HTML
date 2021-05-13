@@ -6,10 +6,13 @@
 
 ## 덤으로 vi 사용해 보기
 * 파일열기는  vi 파일이름
-* Insert mode 진입하기는 vi 처음화면에서 i
-* Overwrite(편집) mode 진입하기는 vi 처음화면에서 o
+* Insert mode 진입하기는  
+vi 처음화면에서 i
+* Overwrite(편집) mode 진입하기는  
+vi 처음화면에서 o
 
-* 편집 화면에서 명령 mode 전환하기는  ESC 키(1 ~ 2)
+* 편집 화면에서 명령 mode 전환하기는  
+ESC 키(1 ~ 2)
 * vi 종료하기 :q
 * 편집내용 저장하기 :w
 * 편집내용 저장하지 않고 끝내기 :q!
