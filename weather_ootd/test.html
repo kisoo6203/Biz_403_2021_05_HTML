@@ -7,23 +7,31 @@
     <title></title>
     <style>
       body {
-        background-color: wheat;
+        background-image: url("6.jpg");
+        
+        
       }
       div {
         text-align: center;
-        text-shadow: 2px 2px 2px black;
+        text-shadow: 3px 3px 3px gray;
         padding: 20px;
-        font-size: 20px;
+        font-size: 30px;
+        color:wheat;
       }
       section {
-        height: 70%;
         text-align: right;
+        
       }
-
-      h4 {
-        width: 60%;
+      h3 {
+        width: 70%;
         margin: 30px;
         overflow: auto;
+        color: yellowgreen;
+      }
+      label {
+        color: black;
+        padding: 0.5rem;
+        
       }
     </style>
   </head>
@@ -32,18 +40,20 @@
       <h1>Wheather & ootd</h1>
     </div>
     <section>
-      <h4>ID</h4>
-      <h4>PASSWORD</h4>
-
-      <p id="p1">회원가입</p>
+      <h3>ID <input name="ID"></h4>
+      <h3>PASSWORD <input name="PASSWORD"></h4>
+      <label name="l1"><a href="input.html">회원가입</a></label>
+      <label name="l2"><a href="login.html">로그인</a></label>
     </section>
   </body>
   <script>
-    document.querySelector("p#p1").addEventListener("click", function (ev) {
+    // 왜 안되는거냐?
+    document.querySelector("label#l1").addEventListener("click", function (ev) {
       alert("회원가입을 시작합니다");
     });
-    document.addEventListener("DOMContentLoaded", function )_{
-
-    }
+    document.querySelector("label#l2").addEventListener("click", function (ev) {
+      alert("로그인 되었습니다");
+    });
+    
   </script>
 </html>
