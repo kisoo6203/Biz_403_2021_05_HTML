@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
   // nav와 section을 별도의 변수로 만들기
   const nav = document.querySelector("nav#main_nav");
-  const conts = document.querySelector("section#contents");
+  const dot = document.querySelector("nav#dot_nav");
 
   // 이벤트 핸들러 함수 선언
   const navClick = (e) => {
@@ -46,7 +46,7 @@ document.addEventListener("DOMContentLoaded", () => {
   };
   // nav에 click event 설정
   nav.addEventListener("click", navClick);
-
+  dot.addEventListener("click", navClick);
   /*
   scroll event는 화면이 스크롤 되는 동안에
   엄청나게 많은 event가 발생한다
@@ -59,7 +59,7 @@ document.addEventListener("DOMContentLoaded", () => {
   flag를 세팅하여 다시 코드가 중복 실행되는 것을 방지
   */
   let ticking = false;
-  const scrollTop_Nav_tick = (e) => {
+  const scrollTop_nav_tick = (e) => {
     if (!ticking) {
       ticking = true;
 
@@ -83,7 +83,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
       // 혹시 active가 설정된 li tag가 있으면
       // active 클래스를 제거하고
-      let activs = nav.querySelectorAll("ul li.active");
+      let actives = nav.querySelectorAll("ul li.active");
       for (let i = 0; i < actives.length; i++) {
         actives[i].classList.remove("active");
       }
@@ -91,9 +91,22 @@ document.addEventListener("DOMContentLoaded", () => {
       // active 클래스를 지정
       li.classList.add("active");
 
+      let dot_active = dot.querySelectorAll("li.active");
+      for (let i = 0; i < dot_active.length; i++) {
+        dot_active[i].classList.remove("active");
+      }
+      let dot_li = dot.querySelector("ul li." + art.id);
+      dot_li.classList.add("active");
+
       ticking = false;
     }
   };
   // 현재 보고 있는 화면이 스크롤되면
-  document.addEventListener("scroll", scrollTop_Nav_tick);
+  document.addEventListener("scroll", scrollTop_nav_tick);
+
+  document
+    .querySelector("nav#main_nav .fa-bars")
+    .addEventListener("click", (e) => {
+      document.querySelector("nav#main_nav ul").classList.toggle("drop");
+    });
 });
