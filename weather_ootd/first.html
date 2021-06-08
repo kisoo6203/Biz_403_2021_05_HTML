@@ -12,12 +12,13 @@
       }
       div {
         display: flex;
-        margin: 10px;
         margin-bottom: -2vh;
+        
       }
       h1,
       h4 {
         color: white;
+        text-shadow: 0px 0px 20px rgb(234 237 176);
       }
       h1 {
         font-size: 80px;
@@ -28,26 +29,57 @@
         font-size: 28px;
         text-align: center;
       }
-      picture {
-        width: 200%;
-        height: 200%;
-        background-image: url("1.jpg");
+      img {
+        display: block;
+        margin: 0px auto;
+      }
+      p {
+        text-align: center;
+        font-size: 20px;
+        color: white;
+        font-weight: 900;
+      }
+      nav {
+        vertical-align: top;
+        border: 1px solid red;
+        padding: 20px;
+        display: flex;
+        margin-left: 0px auto;
+                
+      }
+      nav li {
+        color: rgb(255, 255, 255);
+        font-size: 20px;
       }
     </style>
   </head>
   <body>
     <div>
-      <div>ID : <input name:"ID"></div>
-      <div>PW : <input name:"PW"></div>
-      <div>
-        <button><a href="../weather_ootd/join.html"></a>LOGIN</button>
+      <div class="input">ID : <input name:"ID"></div>
+      <div class="input">PW : <input name:"PW"></div>
+      <div class="input">
+        <button name="login"><a href="../weather_ootd/join.html"></a>LOGIN</button>
       </div>
-      <div>
-        <button><a href="../weather_ootd/join.html"></a>회원가입</button>
+      <div class="input">
+        <button name="join"><a href="../weather_ootd/join.html"></a>회원가입</button>
       </div>
     </div>
     <h1>W O O</h1>
     <h4>WEATHER & OOTD</h4>
-    <picture></picture>
+    <nav>
+      <ul>
+      <li>강수</li>
+      <li>습도</li>
+      <li>바람</li>
+      <li>미세먼지</li>
+      <li>초미세먼지</li>
+      <li>자외선</li>
+      </ul>
+      <img src="1.png" alt=""></img>
+      
+    </nav>
+    <p>온도 : ?  날씨 : ?</p>
+
+    
   </body>
 </html>
