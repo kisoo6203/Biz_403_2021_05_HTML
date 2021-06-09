@@ -10,11 +10,11 @@
         background: linear-gradient(130deg, #7389d0, #eebdc3);
         background-attachment: fixed;
       }
-      div {
+      div{
         display: flex;
-        margin-bottom: -2vh;
         
       }
+
       h1,
       h4 {
         color: white;
@@ -23,7 +23,7 @@
       h1 {
         font-size: 80px;
         text-align: center;
-        margin-bottom: -5vh;
+        height: 50px;
       }
       h4 {
         font-size: 28px;
@@ -55,14 +55,10 @@
   </head>
   <body>
     <div>
-      <div class="input">ID : <input name:"ID"></div>
-      <div class="input">PW : <input name:"PW"></div>
-      <div class="input">
-        <button name="login"><a href="../weather_ootd/join.html"></a>LOGIN</button>
-      </div>
-      <div class="input">
-        <button name="join"><a href="../weather_ootd/join.html"></a>회원가입</button>
-      </div>
+      <div class="input"></div>ID : <input name:"ID">
+      <div class="input"></div>PW : <input name:"PW">
+        <button name="login"><a href="../weather_ootd/login.html">LOGIN</a></button>
+        <button name="join"><a href="../weather_ootd/join.html">JOIN</a></button>
     </div>
     <h1>W O O</h1>
     <h4>WEATHER & OOTD</h4>
@@ -79,7 +75,12 @@
       
     </nav>
     <p>온도 : ?  날씨 : ?</p>
-
-    
   </body>
+  <script>
+      document.querySelector("button#login").addEventListener("click", function (ev) {
+      alert("WOO에 접속하였습니다");
+      document.querySelector("button#join").addEventListener("click", function (ev) {
+      alert("회원가입을 진행합니다");
+    });
+  </script>
 </html>

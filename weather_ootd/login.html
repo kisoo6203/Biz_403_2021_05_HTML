@@ -1,26 +1,82 @@
 <!DOCTYPE html>
 <html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>로그인 화면</title>
-</head>
-<style>
-    body{
-        background-image: url(10.gif);
-        background-size: 50% 500%;
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>최초화면</title>
+    <style>
+      body {
+        background: linear-gradient(130deg, #7389d0, #eebdc3);
+        background-attachment: fixed;
+      }
+      div{
+        display: flex;
         
-    }
-    h1 {
+      }
+
+      h1,
+      h4 {
+        color: white;
+        text-shadow: 0px 0px 20px rgb(234 237 176);
+      }
+      h1 {
+        font-size: 80px;
         text-align: center;
-        font-size: 40px;
+        height: 50px;
+      }
+      h4 {
+        font-size: 28px;
+        text-align: center;
+      }
+      img {
+        display: block;
+        margin: 0px auto;
+      }
+      p {
+        text-align: center;
+        font-size: 20px;
+        color: white;
+        font-weight: 900;
+      }
+      nav {
+        vertical-align: top;
+        border: 1px solid red;
+        padding: 20px;
+        display: flex;
+        margin-left: 0px auto;
+                
+      }
+      nav li {
+        color: rgb(255, 255, 255);
+        font-size: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
 
-    }
-</style>
-<body>
-    <h1>이곳은 로그인 후 날씨확인 창</h1>
-
-
-</body>
+        <button name="logout"><a href="../weather_ootd/first.html">Logout</a></button>
+    </div>
+    <h1>W O O</h1>
+    <h4>WEATHER & OOTD</h4>
+    <nav>
+      <ul>
+      <li>강수</li>
+      <li>습도</li>
+      <li>바람</li>
+      <li>미세먼지</li>
+      <li>초미세먼지</li>
+      <li>자외선</li>
+      </ul>
+      <img src="1.png" alt=""></img>
+      
+    </nav>
+    <p>온도 : ?  날씨 : ?</p>
+  </body>
+  <script>
+      document.querySelector("button").addEventListener("click", function (ev) {
+      alert("로그아웃 하였습니다");
+    });
+  </script>
 </html>

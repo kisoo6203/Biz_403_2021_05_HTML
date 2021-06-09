@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>회원가입</title>
+  </head>
+  <style>
+    body {
+      background: linear-gradient(130deg, #7389d0, #eebdc3);
+      background-attachment: fixed;
+    }
+    h1 {
+      text-align: center;
+      color: white;
+      text-shadow: 0px 0px 20px rgb(234 237 176);
+      font-size: 70px;
+    }
+    form {
+      width: 400px;
+      height: 400px;
+      display: inline-block;
+      text-align: center;
+
+      background-color: black;
+    }
+    div.as {
+      text-align: center;
+
+      padding: 1rem;
+      color: white;
+      font-weight: 900;
+    }
+    div.ad {
+    }
+    button.ad {
+      text-align: right;
+    }
+    p {
+      color: red;
+    }
+  </style>
+  <body>
+    <h1>회원가입</h1>
+    <form>
+      <div class="as">
+        <div class="ad">ID : <input name"ID"></div>
+        <div class="ad">비밀번호 : <input name"PASSWORD"></div>
+        <div class="ad">성별 : <input name"sex"></div>
+        <div class="ad">주소 : <input name"addr"></div>
+      </div>
+      <p>(자주 알아볼 지역의 상세주소를 입력해주세요)</p>
+      <button class="ad">
+        <a href="../weather_ootd/test.html"></a>가입하기
+      </button>
+    </form>
+  </body>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      document.querySelector("button").addEventListener("click", (ev) => {
+        alert("회원가입을 환영합니다!");
+        alert("상세 날씨 페이지로 이동합니다");
+        document.location.href =
+          "http://127.0.0.1:5501/weather_ootd/login.html";
+      });
+    });
+  </script>
+</html>
