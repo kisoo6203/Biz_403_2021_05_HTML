@@ -10,11 +10,26 @@
         background: linear-gradient(130deg, #7389d0, #eebdc3);
         background-attachment: fixed;
       }
-      div{
-        display: flex;
+      form {
+        flex-direction: column;
+        text-align: right;
+      }
+      button {
+        position:relative;
+        left:83%;
+        width:8%;
+        height:20px;
+        background: linear-gradient(125deg,#ebe5d2,#df9ce5,#ec81c3);
+        background-position: left;
+        background-size: 200%;
+        
+        font-weight: bold;
+        border:none;
+        cursor:pointer;
+        transition: 0.5s;
         
       }
-
+      
       h1,
       h4 {
         color: white;
@@ -41,25 +56,22 @@
       }
       nav {
         vertical-align: top;
-        border: 1px solid red;
-        padding: 20px;
         display: flex;
         margin-left: 0px auto;
                 
       }
       nav li {
         color: rgb(255, 255, 255);
-        font-size: 20px;
+        font-size: 15px;
       }
     </style>
   </head>
   <body>
-    <div>
-      <div class="input"></div>ID : <input name:"ID">
-      <div class="input"></div>PW : <input name:"PW">
-        <button name="login"><a href="../weather_ootd/login.html">LOGIN</a></button>
-        <button name="join"><a href="../weather_ootd/join.html">JOIN</a></button>
-    </div>
+    <form>
+      <div class="input">ID : <input type="text">PW : <input type="password"></div>
+    </form>
+    <button name="login"><a href="../weather_ootd/login.html">접속</a></button>
+    <button name="join"><a href="../weather_ootd/join.html">회원가입</a></button>
     <h1>W O O</h1>
     <h4>WEATHER & OOTD</h4>
     <nav>

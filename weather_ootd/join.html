@@ -17,44 +17,56 @@
       text-shadow: 0px 0px 20px rgb(234 237 176);
       font-size: 70px;
     }
-    form {
-      width: 400px;
-      height: 400px;
-      display: inline-block;
-      text-align: center;
+    section {
+      display: flex;
+      flex-direction: column;
+      align-items: center;      
+    }
 
-      background-color: black;
+    form.place {
+      text-align: right;
     }
     div.as {
-      text-align: center;
-
-      padding: 1rem;
       color: white;
       font-weight: 900;
-    }
-    div.ad {
-    }
-    button.ad {
-      text-align: right;
     }
     p {
       color: red;
     }
+
   </style>
   <body>
     <h1>회원가입</h1>
-    <form>
+    <section>
       <div class="as">
-        <div class="ad">ID : <input name"ID"></div>
-        <div class="ad">비밀번호 : <input name"PASSWORD"></div>
-        <div class="ad">성별 : <input name"sex"></div>
-        <div class="ad">주소 : <input name"addr"></div>
+        <div class="ad">아디 : <input type="text"></div>
+        <div class="ad">비번 : <input type="password"></div>
+        <div>성별 : 
+          <input type="checkbox" name="sex" value="male">남성
+          <input type="checkbox" name="sex" value="female">여성
+        </div>
+        <table>
+        </table>
+        <div class="place">
+          지역선택
+          <select name="city">
+            <option value="1">서울</option>
+            <option value="1">경기도</option>
+            <option value="1">강원도</option>
+            <option value="1">충청북도</option>
+            <option value="1">충청남도</option>
+            <option value="1">전라북도</option>
+            <option value="1">전라남도</option>
+            <option value="1">경상북도</option>
+            <option value="1">경상남도</option>
+          </select>
+        </div>
+        <div class="ad">주소 : <input name="addr"></div>
+        
       </div>
       <p>(자주 알아볼 지역의 상세주소를 입력해주세요)</p>
-      <button class="ad">
-        <a href="../weather_ootd/test.html"></a>가입하기
-      </button>
-    </form>
+      <button>가입하기</button>
+    </section>
   </body>
   <script>
     document.addEventListener("DOMContentLoaded", () => {
