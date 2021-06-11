@@ -8,61 +8,112 @@
   </head>
   <style>
     body {
-      background: linear-gradient(130deg, #7389d0, #eebdc3);
+      /*background: linear-gradient(130deg, #7389d0, #eebdc3);*/
+      background-image: url(0Ki2Jqj.gif.crdownload);
       background-attachment: fixed;
+    }
+    h1,
+    h4 {
+      color: white;
+      text-shadow: 0px 0px 20px rgb(234 237 176);
     }
     h1 {
       text-align: center;
-      color: white;
-      text-shadow: 0px 0px 20px rgb(234 237 176);
       font-size: 70px;
+      height: 50px;
+    }
+    h4 {
+      font-size: 28px;
+      text-align: center;
     }
     section {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
+      display: grid;
+      justify-items: center;
+    }
+    fieldset {
+      border-radius: 20px;
+      display: grid;
+      justify-items: center;
     }
 
-    form.place {
-      text-align: right;
+    section label {
+      display: inline-block;
+      width: 30%;
+    }
+    section input {
+      width: 60%;
+      margin: 4px 5px;
+      padding: 4px 5px;
+      border-radius: 5px;
+      outline: 0;
+    }
+    section input:hover {
+      background-color: rgb(187, 187, 187);
+    }
+    select {
+      padding: 2px;
+      width: 63%;
+    }
+    select:hover {
+      background-color: rgb(187, 187, 187);
+      cursor: pointer;
     }
     div.as {
       color: white;
       font-weight: 900;
     }
+
     p {
       color: red;
+      text-align: center;
+    }
+    button {
+      text-align: right;
+      border-radius: 10px;
+    }
+    button:hover {
+      background-color: rgb(187, 187, 187);
+      cursor: pointer;
     }
   </style>
   <body>
-    <h1>회원가입</h1>
+    <h1>Sign Up</h1>
+    <h4>WEATHER & OOTD</h4>
     <section>
-      <div class="as">
-        <div class="ad">아디 : <input type="text" /></div>
-        <div class="ad">비번 : <input type="password" /></div>
-        <div>
-          성별 : <input type="checkbox" name="sex" value="male" />남성
-          <input type="checkbox" name="sex" value="female" />여성
+      <fieldset>
+        <div class="as">
+          <div class="ad"><label>ID </label><input type="text" /></div>
+          <div class="ad"><label>PW </label><input type="password" /></div>
+          <div class="ad">
+            <label>PW(chcek) </label><input type="password" />
+          </div>
+          <div class="af">
+            <label>성별</label>
+            <select name="sex">
+              <option value="1">남성(MALE)</option>
+              <option value="1">여성(FEMALE)</option>
+            </select>
+          </div>
+          <table></table>
+          <div class="af">
+            <label> 지역선택 </label>
+            <select name="city">
+              <option value="1">서울</option>
+              <option value="1">경기도</option>
+              <option value="1">강원도</option>
+              <option value="1">충청북도</option>
+              <option value="1">충청남도</option>
+              <option value="1">전라북도</option>
+              <option value="1">전라남도</option>
+              <option value="1">경상북도</option>
+              <option value="1">경상남도</option>
+            </select>
+          </div>
+          <div class="ad"><label>주소 </label><input name="addr" /></div>
+          <p>(자주 알아볼 지역의 상세주소를 입력해주세요)</p>
         </div>
-        <table></table>
-        <div class="place">
-          지역선택
-          <select name="city">
-            <option value="1">서울</option>
-            <option value="1">경기도</option>
-            <option value="1">강원도</option>
-            <option value="1">충청북도</option>
-            <option value="1">충청남도</option>
-            <option value="1">전라북도</option>
-            <option value="1">전라남도</option>
-            <option value="1">경상북도</option>
-            <option value="1">경상남도</option>
-          </select>
-        </div>
-        <div class="ad">주소 : <input name="addr" /></div>
-      </div>
-      <p>(자주 알아볼 지역의 상세주소를 입력해주세요)</p>
-      <button>가입하기</button>
+        <button>가입하기</button>
+      </fieldset>
     </section>
   </body>
   <script>
