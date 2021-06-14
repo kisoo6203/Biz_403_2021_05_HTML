@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>최초화면</title>
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        background: linear-gradient(130deg, #7389d0, #eebdc3);
+        background-attachment: fixed;
+      }
+      div#login {
+        padding: 2px;
+      }
+      div#login input:hover {
+        background: linear-gradient(125deg, #ebe5d2, #df9ce5);
+        background-position: left;
+        background-size: 200%;
+        border: 1px solid gray;
+        transition: 0.1s;
+      }
+      div#login div {
+        text-align: right;
+      }
+      div#login label {
+        padding: 0px 10px 0px 10px;
+        color: white;
+      }
+      div#login label:nth-of-type(1) {
+        margin-left: auto;
+      }
+      div#login input {
+        border: 1px solid white;
+        border-radius: 15px;
+        background-color: transparent;
+        outline: 0;
+        padding: 3px;
+        text-align: center;
+      }
+      div button {
+        border-radius: 5px;
+        border: 1px solid gray;
+      }
+      div button:hover {
+        cursor: pointer;
+        font-size: 15px;
+        transition: 0.5s;
+        background-color: gray;
+      }
+      div#main {
+        border: 1px solid red;
+        padding: 15px;
+      }
+      div#main h1:hover {
+        font-size: 100px;
+        transition: 0.5s;
+      }
+      div#bottom {
+        display: flex;
+        border: 1px solid blue;
+        height: 600px;
+        padding-left: 20%;
+        padding-right: 20%;
+      }
+
+      div#b_left {
+        display: flex;
+        flex: 1;
+        border: 1px solid black;
+        width: 30%;
+        justify-items: left;
+        padding: 10px;
+        flex-direction: column;
+      }
+      div#b_left_1 {
+        border: 1px solid red;
+        flex: 1;
+        padding: 1px;
+      }
+
+      div#b_right {
+        flex: 1;
+        border: 1px solid black;
+        width: 30%;
+        justify-items: right;
+      }
+      div#b_center {
+        display: flex;
+        flex: 1;
+
+        flex-direction: column;
+      }
+      div#c_1 {
+        border: 1px solid red;
+      }
+      div#c_2 {
+        border: 1px solid red;
+      }
+      h1,
+      h4 {
+        color: white;
+        text-shadow: 0px 0px 20px rgb(234 237 176);
+      }
+      h1 {
+        font-size: 90px;
+        text-align: center;
+      }
+      h4 {
+        font-size: 32px;
+        text-align: center;
+      }
+      figure.b_center {
+        font-family: "Raleway", Arial, sans-serif;
+        position: relative;
+        overflow: hidden;
+        /*margin: 10px;
+        min-width: 220px;
+        max-width: 310px;
+        max-height: 310px;
+        width: 100%;*/
+        /*background:rgb(156, 156, 156);*/ /* 날씨아이콘 배경색 */
+        color: #ffffff;
+        text-align: center;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+        font-size: 16px;
+        /*background-image: url(1.png);*/
+        background-position: 50% 50%;
+
+        padding-left: 50%;
+        padding-right: 50%;
+        background-repeat: no-repeat;
+        transition: 0.5s;
+      }
+      figure.b_center:hover {
+        opacity: 0.25;
+        -webkit-transform: scale(1.1);
+        transform: scale(1.2);
+      }
+      figure.b_center * {
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+        -webkit-transition: all 0.45s ease-in-out;
+        transition: all 0.45s ease-in-out;
+      }
+      figure.b_center img {
+        position: relative;
+        opacity: 0.9;
+      }
+      figure.b_center figcaption {
+        position: absolute;
+        top: 45%;
+        left: 7%;
+        right: 7%;
+        bottom: 45%;
+        border: 1px solid white;
+        border-width: 1px 1px 0;
+      }
+      figure.b_center .heading {
+        overflow: hidden;
+        -webkit-transform: translateY(50%);
+        transform: translateY(50%);
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+      }
+      figure.b_center h2 {
+        display: table;
+        margin: 0 auto;
+        padding: 0 10px;
+        position: relative;
+        text-align: center;
+        width: auto;
+        text-transform: uppercase;
+        font-weight: 400;
+      }
+      figure.b_center h2 span {
+        font-weight: 800;
+      }
+      figure.b_center h2:before,
+      figure.b_center h2:after {
+        position: absolute;
+        display: block;
+        width: 1000%;
+        height: 1px;
+        content: "";
+        background: white;
+        top: 50%;
+      }
+      figure.b_center h2:before {
+        left: -1000%;
+      }
+      figure.b_center h2:after {
+        right: -1000%;
+      }
+      figure.b_center p,
+      figure.b_center div.b_left {
+        /* p태그가 숨겨졌다가 나타나는 부분 */
+        top: 50%;
+        -webkit-transform: translateY(-50%);
+        transform: translateY(-50%);
+        position: absolute;
+        width: 100%;
+        padding: 0 20px;
+        margin: 0;
+        opacity: 0;
+        line-height: 1.6em;
+        font-size: 0.9em;
+      }
+      /*figure.b_center a {
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        position: absolute;
+        z-index: 1;
+      }*/
+      figure.b_center:hover img {
+        /* 날씨아이콘 크기조절 */
+        opacity: 0.25;
+        -webkit-transform: scale(1.1);
+        transform: scale(1.3);
+      }
+      figure.b_center:hover figcaption {
+        /* 날씨아이콘 hover */
+        top: 7%;
+        bottom: 7%;
+      }
+      figure.b_center:hover p {
+        /* 날씨아이콘 hover시 p태그확인 */
+        opacity: 1;
+        -webkit-transition-delay: 0.35s;
+        transition-delay: 0.35s;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="login">
+      <div>
+        <button><a href="../weather_ootd/first3.html">Log-off</a></button>
+      </div>
+    </div>
+    <div id="main">
+      <h1>W O O</h1>
+      <h4>WEATHER & OOTD</h4>
+    </div>
+    <div id="bottom">
+      <figure class="b_center">
+        <!--<div id="c_1"><img src="1.png" alt="" width=""></img></div>-->
+        <figcaption>
+          <div id="b_left">
+            <div id="b_left_1">강수</div>
+            <div id="b_left_1">습도</div>
+            <div id="b_left_1">바람</div>
+            <div id="b_left_1">미세먼지</div>
+            <div id="b_left_1">초미세먼지</div>
+            <div id="b_left_1">자외선</div>
+          </div>
+          <p>
+            오늘은 날씨가 비교적 고온다습하므로 시원한 옷차림을 추천드립니다
+          </p>
+
+          <div class="heading">
+            <h2>Today's<span> OOTD</span></h2>
+          </div>
+        </figcaption>
+        <div id="c_2"><label>온도</label><label>?</label></div>
+        <div><label>날씨</label><label>?</label></div>
+      </figure>
+      <!--<div id="b_right">오른쪽<img src="옷.jpg" alt="" width="100%"></img></div>-->
+    </div>
+  </body>
+  <script>
+      document.querySelector("button#login").addEventListener("click", function (ev) {
+      alert("WOO에 접속하였습니다");
+      document.querySelector("button#join").addEventListener("click", function (ev) {
+      alert("회원가입을 진행합니다");
+    });
+  </script>
+</html>

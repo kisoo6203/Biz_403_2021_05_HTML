@@ -1,0 +1,16 @@
+div#login {
+  position: fixed;
+  width: 100%;
+
+  z-index: 19;
+}
+div#main {
+  /*
+      화면의 특정한 위치에 강제 고정하기
+      top, left, bottom, right를 이용하여 고정할 수 있다
+      */
+  position: fixed;
+  top: 25px;
+  left: 0;
+  width: 100%;
+}
