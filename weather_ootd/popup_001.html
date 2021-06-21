@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>회원가입 지역선택</title>
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        background: linear-gradient(130deg, #7389d0, #eebdc3);
+        background-attachment: fixed;
+      }
+      section {
+        padding-top: 20%;
+        display: grid;
+        justify-items: center;
+      }
+      fieldset {
+        width: 60%;
+        border-radius: 20px;
+        display: grid;
+        justify-items: center;
+      }
+      button {
+      }
+    </style>
+  </head>
+  <body>
+    <section>
+      <label>지역(구)를 선택해주세요</label>
+      <fieldset>
+        <div class="af">
+          <select id="district">
+            <option value="1">선택</option>
+            <option value="1">서구</option>
+            <option value="1">동구</option>
+            <option value="1">남구</option>
+            <option value="1">북구</option>
+            <option value="1">광산구</option>
+          </select>
+        </div>
+        <button>선택완료</button>
+      </fieldset>
+    </section>
+  </body>
+  <script>
+    function selectValue() {
+      var requestValue = document.getElementById("Name").value; // 전송 파라미터 값
+      console.log(requestValue);
+      var theURL =
+        "http://127.0.0.1:5501/weather_ootd/join_001.html=" + requestValue; // 전송 URL
+      // 호출 한 부모 페이지에서 URL 호출
+      opener.window.location = url;
+      // 호출 한 뒤 현재 팝업 창 닫기 이벤트
+      close();
+    }
+    /* document.addEventListener("DOMContentLoaded", () => {
+      document.querySelector("button").addEventListener("click", (ev) => {
+        alert("회원가입을 환영합니다!");
+        alert("상세 날씨 페이지로 이동합니다");
+        document.location.href =
+          "http://127.0.0.1:5501/weather_ootd/first3.html";
+      });
+    });*/
+  </script>
+</html>

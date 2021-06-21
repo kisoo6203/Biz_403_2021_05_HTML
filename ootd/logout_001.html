@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title></title>
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        background: linear-gradient(130deg, #7389d0, #eebdc3);
+        background-attachment: fixed;
+      }
+
+      .container {
+        display: grid;
+        grid-template-columns: minmax(10%, 20%) auto minmax(10%, 20%);
+        grid-template-rows: auto auto 250px auto auto;
+        grid-template-areas:
+          "   .     .    login "
+          "header header header"
+          "blank  blank  blank "
+          "   a    main    b   "
+          "footer footer footer";
+        margin: 0 auto;
+      }
+
+      .login {
+        grid-area: login;
+        justify-self: end;
+        display: flex;
+        position: fixed;
+        width: 100%;
+        padding: 10px;
+      }
+
+      .login button:nth-of-type(1) {
+        margin-left: auto;
+      }
+
+      .login button {
+        border: 1px solid transparent;
+        border-radius: 15px;
+        background-color: transparent;
+        outline: 0;
+        padding: 3px;
+        text-align: center;
+        margin: 0 5px;
+      }
+
+      .login button:hover {
+        cursor: pointer;
+        font-size: 15px;
+        transition: 0.5s;
+      }
+
+      .header {
+        top: 5%;
+        grid-area: header;
+        padding: 15px auto;
+        position: fixed;
+        width: 100%;
+        z-index: 20;
+      }
+
+      .blank {
+        grid-area: blank;
+      }
+
+      .header h1,
+      h4 {
+        color: white;
+        text-shadow: 0px 0px 20px rgb(234 237 176);
+      }
+
+      .sidebar-a {
+        grid-area: a;
+        padding-right: 1rem;
+      }
+
+      .sidebar-b {
+        grid-area: b;
+        padding-left: 1rem;
+      }
+
+      .main {
+        height: 1000px;
+        grid-area: main;
+      }
+
+      .f_main p {
+        top: 50%;
+        -webkit-transform: translateY(-50%);
+        transform: translateY(-50%);
+        position: absolute;
+        width: 100%;
+        padding: 0 20px;
+        margin: 0;
+        opacity: 0;
+        line-height: 1.6em;
+        font-size: 0.9em;
+      }
+
+      .f_main:hover p {
+        opacity: 1;
+        -webkit-transition-delay: 0.35s;
+        transition-delay: 0.35s;
+      }
+
+      .footer {
+        width: 100%;
+        bottom: 0;
+        text-align: center;
+        position: fixed;
+        grid-area: footer;
+      }
+
+      figure.snip1200 {
+        position: relative;
+        overflow: hidden;
+        height: 800px;
+        min-width: 220px;
+        max-width: 100%;
+        max-height: 100%;
+        width: 100%;
+        background: transparent;
+        color: #ffffff;
+        text-align: center;
+        padding: 3%;
+        font-size: 16px;
+      }
+
+      figure.snip1200:hover {
+        transition: 1s;
+      }
+
+      figure.snip1200 * {
+        /* -webkit-box-sizing: border-box;
+      box-sizing: border-box;*/
+        -webkit-transition: all 0.45s ease-in-out;
+        transition: all 0.45s ease-in-out;
+      }
+
+      figure.snip1200 img {
+        max-width: 80%;
+        position: relative;
+        opacity: 1;
+      }
+
+      figure.snip1200 figcaption.w {
+        position: absolute;
+        top: 45%;
+        left: 7%;
+        right: 7%;
+        bottom: 5%;
+        border-width: 1px 1px 0;
+      }
+
+      figure.snip1200 figcaption.o {
+        position: absolute;
+        top: 5%;
+        left: 7%;
+        right: 7%;
+        bottom: 5%;
+        border-width: 1px 1px 0;
+      }
+
+      figure.snip1200 .heading {
+        overflow: hidden;
+        -webkit-transform: translateY(50%);
+        transform: translateY(50%);
+        position: absolute;
+        bottom: 50%;
+        width: 100%;
+      }
+
+      figure.snip1200 .heading_o {
+        overflow: hidden;
+        -webkit-transform: translateY(50%);
+        transform: translateY(50%);
+        position: absolute;
+        bottom: 15%;
+        width: 100%;
+      }
+
+      figure.snip1200:hover .heading {
+        bottom: 0;
+      }
+
+      figure.snip1200 h1 {
+        display: table;
+        margin: 0 auto;
+        padding: 0 10px;
+        position: relative;
+        text-align: center;
+        width: auto;
+        text-transform: uppercase;
+        font-weight: 400;
+      }
+
+      figure.snip1200 h1 span {
+        font-weight: 800;
+      }
+
+      figure.snip1200 h1:before,
+      figure.snip1200 h1:after {
+        position: absolute;
+        display: block;
+        width: 1000%;
+        height: 1px;
+        content: "";
+        background: white;
+        top: 50%;
+      }
+
+      figure.snip1200 h1:before {
+        left: -1000%;
+      }
+
+      figure.snip1200 h1:after {
+        right: -1000%;
+      }
+
+      div.w_data {
+        top: 50%;
+        -webkit-transform: translateY(-50%);
+        transform: translateY(-50%);
+        position: relative;
+        width: 100%;
+        padding: 0 20px;
+        opacity: 0;
+        line-height: 1.6em;
+        font-size: 0.9em;
+        display: flex;
+        flex-direction: row;
+        height: 55%;
+      }
+
+      div.w_data_div {
+        text-align: center;
+        margin: 0 10px;
+        flex: 1;
+        border: 1px solid white;
+        border-radius: 10px;
+        padding-top: 1%;
+        font-size: 1em;
+        display: flex;
+        flex-direction: column;
+      }
+
+      div.w_data_o {
+        top: 40%;
+        -webkit-transform: translateY(-50%);
+        transform: translateY(-50%);
+        position: relative;
+
+        padding: 0 20px;
+        opacity: 0;
+
+        font-size: 0.9em;
+        display: flex;
+        flex-direction: row;
+        height: 55%;
+      }
+
+      div.w_data_div_o {
+        text-align: center;
+        margin: 0 10px;
+        flex: 1;
+
+        border-radius: 10px;
+        padding-top: 1%;
+        font-size: 1em;
+
+        flex-flow: row wrap;
+      }
+
+      div.w_data_div_a {
+        font-size: 1.5em;
+        flex: 1;
+        padding: 3%;
+      }
+
+      figure.snip1200 a {
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        position: absolute;
+        z-index: 1;
+      }
+
+      /*
+
+      figure.snip1200:hover img.weather,
+      figure.snip1200.hover img.weather {
+        top: -10%;
+        opacity: 1;
+        -webkit-transform: scale(0.8);
+        transform: scale(0.8);
+      }*/
+      figure.snip1200:hover img.clothes,
+      figure.snip1200:hover p {
+        opacity: 0;
+      }
+
+      figure.snip1200:hover div.w_data,
+      figure.snip1200:hover div.w_data_o {
+        opacity: 1;
+        -webkit-transition-delay: 0.35s;
+        transition-delay: 0.35s;
+      }
+
+      div.location,
+      div.time {
+        display: flex;
+      }
+
+      div.location_a,
+      div.time_a {
+        font-size: 25px;
+        margin-left: 10px;
+        text-align: center;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="login">
+        <button class="lg">
+          <a href="../ootd/mypage_001.html">mypage</a>
+        </button>
+        <button class="jo">
+          <a href="../ootd/first_grid_001.html">logout</a>
+        </button>
+      </div>
+
+      <div class="header">
+        <h1 style="font-size: 90px; text-align: center">W O O</h1>
+        <h4 style="font-size: 32px; text-align: center">WEATHER & OOTD</h4>
+      </div>
+      <div class="blank"></div>
+      <div class="sidebar-a"></div>
+
+      <div class="main">
+        <figure class="snip1200">
+          <div class="location">
+            <div class="location_a">현재 위치:</div>
+            <div class="location_a">광주광역시 북구</div>
+          </div>
+          <div class="time">
+            <div class="time_a">기준 시간:</div>
+            <div class="time_a">12:00</div>
+          </div>
+
+          <img class="weather" src="1.png" alt="sq-sample27" />
+          <figcaption class="w">
+            <div class="w_data">
+              <div class="w_data_div">
+                <div class="w_data_div_a">온도</div>
+                <div class="w_data_div_a">
+                  <img src="온도계.png" alt="온도계" />
+                </div>
+                <div class="w_data_div_a">21°</div>
+              </div>
+              <div class="w_data_div">
+                <div class="w_data_div_a">강수확률</div>
+                <div class="w_data_div_a">
+                  <img src="강수확률.png" alt="강수확률" />
+                </div>
+                <div class="w_data_div_a">90%</div>
+              </div>
+              <div class="w_data_div">
+                <div class="w_data_div_a">습도</div>
+                <div class="w_data_div_a">
+                  <img src="humidity.png" alt="습도계" />
+                </div>
+                <div class="w_data_div_a">80%</div>
+              </div>
+              <div class="w_data_div">
+                <div class="w_data_div_a">바람</div>
+                <div class="w_data_div_a">
+                  <img src="wind.png" alt="바람" />
+                </div>
+                <div class="w_data_div_a">약함</div>
+              </div>
+            </div>
+            <div class="heading">
+              <h1><span> WEATHER</span></h1>
+            </div>
+          </figcaption>
+        </figure>
+        <!-- ----------------------------------------------------------------- -->
+        <figure class="snip1200">
+          <div>
+            <img
+              class="clothes"
+              src="clothes.png"
+              alt="clothes"
+              style="padding-top: 3%"
+            />
+            <p style="margin: 10px; font-size: 20px">
+              OOTD 추천을 원하시면 화면에 커서를 올려주세요
+            </p>
+          </div>
+          <figcaption class="o">
+            <div class="w_data_o">
+              <div class="w_data_div_o">
+                <img src="formal-shirt.png" alt="온도계" />
+              </div>
+              <div class="w_data_div_o">
+                <img src="male-clothes.png" alt="온도계" />
+              </div>
+              <div class="w_data_div_o">
+                <img src="polo-shirt.png" alt="온도계" />
+              </div>
+            </div>
+            <div class="heading_o">
+              <h1><span> OOTD</span></h1>
+            </div>
+          </figcaption>
+        </figure>
+      </div>
+
+      <div class="sidebar-b"></div>
+      <div class="footer"></div>
+    </div>
+  </body>
+  <script>
+    /* 왜 안되지?? */
+    document
+      .querySelector("button.mp")
+      .addEventListener("click", function (ev) {
+        alert("mypage로 이동합니다");
+      });
+    document
+      .querySelector("button.lg")
+      .addEventListener("click", function (ev) {
+        alert("로그아웃 하였습니다");
+      });
+  </script>
+</html>
