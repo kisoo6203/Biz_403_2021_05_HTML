@@ -1,0 +1,719 @@
+<!DOCTYPE html>
+<html
+  lang="en"
+  class="no-js"
+  prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb#"
+>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"
+    />
+
+    <title>Rainbow Hunt | Rain sound generator for sleeping or studying</title>
+    <meta
+      name="description"
+      content="Online generator of relaxing sounds of rain. Free rainy sounds for background rain."
+    />
+    <meta
+      name="keywords"
+      content="rainysounds, free rain sound, rain noise, rain simulator, background rain noise"
+    />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://rainbowhunt.com" />
+
+    <!-- OPEN GRAPHS Meta -->
+    <meta property="og:url" content="https://rainbowhunt.com" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Rainbow Hunt" />
+    <meta
+      property="og:description"
+      content="Ultimate rain simulator for relaxing or working. Let the rain sing you a lullaby."
+    />
+    <meta
+      property="og:image"
+      content="https://rainbowhunt.com/img/social.jpg"
+    />
+
+    <!-- TWITTER Meta -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:url"
+      content="https://rainbowhunt.com"
+      <meta
+      name="twitter:title"
+      content="Rainbow Hunt"
+    />
+    <meta
+      name="twitter:description"
+      content="Ultimate rain simulator for relaxing or working. Let the rain sing you a lullaby."
+    />
+    <meta
+      name="twitter:image"
+      content="https://rainbowhunt.com/img/social.jpg"
+    />
+
+    <link
+      rel="icon"
+      href="img/fav/favicon-16x16.png"
+      sizes="16x16"
+      type="image/png"
+    />
+    <link
+      rel="icon"
+      href="img/fav/favicon-32x32.png"
+      sizes="32x32"
+      type="image/png"
+    />
+    <link
+      rel="icon"
+      href="img/fav/favicon-96x96.png"
+      sizes="96x96"
+      type="image/png"
+    />
+    <link
+      rel="icon"
+      href="img/fav/favicon-192x192.png"
+      sizes="192x192"
+      type="image/png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="57x57"
+      href="img/fav/apple-touch-icon-57x57.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="152x152"
+      href="img/fav/apple-touch-icon-152x152.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="img/fav/apple-touch-icon-180x180.png"
+    />
+
+    <link
+      href="https://fonts.googleapis.com/css?family=Abel"
+      rel="stylesheet"
+    />
+    <!-- Stylesheets from: normalize.css + demo.css + style1.css + menu/component.css + simple-slider.css + hint.css -->
+    <link rel="stylesheet" type="text/css" href="css/demo.css" />
+
+    <!--[if IE]>
+      <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- jPlayer -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@2.1.1/dist/jquery.min.js"></script>
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/jplayer@2.9.2/dist/jplayer/jquery.jplayer.min.js"
+    ></script>
+
+    <script type="text/javascript">
+      //<![CDATA[
+      $(document).ready(function () {
+        $("#jquery_jplayer_1").jPlayer({
+          ready: function () {
+            $(this)
+              .jPlayer("setMedia", {
+                title: "Best rain",
+                mp3: "https://ambicular.com/sounds/rain/rainbest160.mp3",
+              })
+              .jPlayer("play");
+          },
+          solution: "html",
+          preload: "none",
+          supplied: "mp3",
+          cssSelectorAncestor: "#jp_container_1",
+          loop: true,
+        });
+
+        $("#jquery_jplayer_2").jPlayer({
+          ready: function () {
+            $(this).jPlayer("setMedia", {
+              title: "Window Raindrops",
+              mp3: "https://ambicular.com/sounds/rain/raindrops160.mp3",
+            });
+          },
+          solution: "html",
+          preload: "none",
+          supplied: "mp3",
+          cssSelectorAncestor: "#jp_container_2",
+          loop: true,
+        });
+
+        $("#jquery_jplayer_3").jPlayer({
+          ready: function () {
+            $(this).jPlayer("setMedia", {
+              title: "Rain constant",
+              mp3: "https://ambicular.com/sounds/rain/rain-constant160.mp3",
+            });
+          },
+          solution: "html",
+          preload: "none",
+          supplied: "mp3",
+          cssSelectorAncestor: "#jp_container_3",
+          loop: true,
+        });
+
+        $("#jquery_jplayer_4").jPlayer({
+          ready: function () {
+            $(this).jPlayer("setMedia", {
+              title: "Splashing rainfall long",
+              mp3: "https://e8b8e3q2.ssl.hwcdn.net/sounds/rain/splashing-rainfall160.mp3",
+            });
+          },
+          solution: "html",
+          preload: "none",
+          supplied: "mp3",
+          cssSelectorAncestor: "#jp_container_4",
+          loop: true,
+        });
+
+        $("#jquery_jplayer_5").jPlayer({
+          ready: function () {
+            $(this).jPlayer("setMedia", {
+              title: "Thunder",
+              mp3: "https://e8b8e3q2.ssl.hwcdn.net/sounds/rain/thunder160.mp3",
+            });
+          },
+          solution: "html",
+          preload: "none",
+          supplied: "mp3",
+          cssSelectorAncestor: "#jp_container_5",
+          loop: true,
+        });
+
+        $("#stop_all").click(function () {
+          setTimeout(function () {
+            $(".jp-pause").trigger("click");
+          }, 3600000); // write the time after you want to stop 1000 = 1 second //
+        });
+      });
+      //]]>
+    </script>
+
+    <!-- Countdown by Krzysztof Furtak -->
+    <script type="text/javascript" src="js/kkcountdown.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function () {
+        $("#stop_all").on("click", function () {
+          var secs = $("#secs").val(),
+            cdBox = $(".kkcountdown");
+
+          $("#secs")
+            .parent("span")
+            .html("<strong>" + secs + "</strong>");
+          $(".reset")
+            .show()
+            .on("click", function () {
+              cdBox.trigger("countdown:reset");
+            });
+
+          cdBox.attr("data-seconds", secs).kkcountdown({
+            displayDays: true,
+            displayZeroDays: false,
+            hoursText: ":",
+            minutesText: ":",
+            secondsText: "",
+            textAfterCount: "Thank you",
+            warnSeconds: 10,
+            warnClass: "alert",
+            callback: cBack,
+          });
+        });
+      });
+
+      function cBack() {
+        console.log("THE END - Function callback!");
+      }
+    </script>
+
+    <!-- analytics -->
+    <script
+      async
+      defer
+      data-domain="rainbowhunt.com"
+      src="https://plausible.io/js/plausible.js"
+    ></script>
+  </head>
+
+  <body>
+    <!-- jpplayer begins -->
+    <div id="jquery_jplayer_1" class="jp-jplayer jp-jplayer1"></div>
+    <div id="jquery_jplayer_2" class="jp-jplayer jp-jplayer2"></div>
+    <div id="jquery_jplayer_3" class="jp-jplayer jp-jplayer3"></div>
+    <div id="jquery_jplayer_4" class="jp-jplayer jp-jplayer4"></div>
+    <div id="jquery_jplayer_5" class="jp-jplayer jp-jplayer5"></div>
+
+    <audio
+      id="forest"
+      src="https://e8b8e3q2.ssl.hwcdn.net/sounds/forest/small-dawn-chorus160.mp3"
+    ></audio>
+
+    <div class="image-preload">
+      <img src="img/drop-color.png" alt="" />
+      <img src="img/drop-alpha.png" alt="" />
+      <img src="img/weather/texture-sun-fg.png" alt="" />
+      <img src="img/weather/texture-sun-bg.jpg" alt="" />
+      <img src="img/weather/texture-sun-2fg.png" alt="" />
+      <img src="img/weather/texture-sun-2bg.jpg" alt="" />
+      <img src="img/weather/texture-fallout-fg.png" alt="" />
+      <img src="img/weather/texture-fallout-bg.jpg" alt="" />
+    </div>
+
+    <div class="container">
+      <header class="just-header" id="topbar">
+        <img src="img/logo.png" class="logo" alt="logo" />
+
+        <nav class="just-demos">
+          <!-- <a href="https://gumroad.com/l/thevibes" target="_blank" aria-label="100% off coupon code!" class="btn hint--left" style="border-radius: 40px;">Free software with coupon 'RAIN'</a>
+				 -->
+
+          <a
+            href="light.html"
+            aria-label="Low resource mode"
+            class="btn hint--left"
+            style="border-radius: 40px"
+            >Minimalist version</a
+          >
+
+          <script src="https://gumroad.com/js/gumroad.js"></script>
+          <!-- <a class="gumroad-button" href="https://gum.co/thevibes" target="_blank" style="margin: -18px 0 0 12px; opacity: 0.8;">PC Software</a> -->
+
+          <!-- <a href="#slide-5">Slide 5</a> -->
+        </nav>
+      </header>
+
+      <div id="time" class="hide2">
+        <span class="kkcountdown" data-seconds="3600"></span>
+      </div>
+
+      <a href="javascript:;" id="showRight" class="men"
+        ><i class="fa fa-bars fa-3x"></i
+      ></a>
+      <nav
+        class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-right"
+        id="cbp-spmenu-s2"
+      >
+        <h3>Menu</h3>
+        <span
+          ><a href="javascript:;" id="hideui" class="btn"
+            >hide ui <i class="fa fa-eye-slash fa-lg"></i></a
+          ><a href="javascript:;" id="showui" class="btn2"
+            ><i class="fa fa-eye fa-lg"></i> show ui</a
+          ></span
+        >
+        <span
+          ><a href="#slide-2" class="btn"
+            >drops<i class="fa fa-tint fa-lg fa-fw"></i>- </a
+          ><a href="#slide-1" class="btn2">
+            +<i class="fa fa-tint fa-lg fa-fw"></i>drops</a
+          ></span
+        >
+        <span
+          ><a href="light.html"
+            ><i class="fa fa-toggle-on fa-fw"></i> &nbsp; Minimalist version</a
+          ></span
+        >
+        <span
+          ><a href="javascript:;" id="stop_all"
+            ><i class="fa fa-clock-o fa-fw"></i> &nbsp; Timer<i
+              class="fa fa-angle-right fa-fw"
+            ></i
+            >stop sounds</a
+          ></span
+        >
+        <span
+          ><a href="https://defonic.com"
+            ><i class="fa fa-star fa-fw"></i> &nbsp; More sounds</a
+          ></span
+        >
+        <!-- <span><a href="https://gumroad.com/l/thevibes" target="_blank"><i class="fa fa-windows fa-fw"></i>  &nbsp; PC software<br><div style="margin: 5px 0 0 30px; font-size: 14px;">100% off with coupon code 'RAIN'</div></a></span>
+			 --><!-- <span><a href="phoneapp.html" target="_blank"><i class="fa fa-mobile fa-fw fa-lg"></i> Phone app</a></span> -->
+        <a
+          class="gumroad-button"
+          href="https://gum.co/thevibes"
+          target="_blank"
+          style="margin: 25px 0 0 42px; opacity: 0.8"
+          >PC Software</a
+        >
+
+        <!-- Share buttons by Cubecamp.ru  www.cubecamp.ru/articles/share/cubecamp.html -->
+        <div
+          id="addbar2"
+          class="share-btn"
+          data-url="https://rainbowhunt.com"
+          data-title="RainbowHunt"
+          data-desc="Ultimate rain simulator."
+        >
+          <!-- <a data-id="vk"><i class="fa fa-vk fa-lg fa-fw"></i></a> -->
+          <a data-id="tw"><i class="fa fa-twitter fa-lg fa-fw"></i></a>
+          <!-- <a data-id="in"><i class="fa fa-linkedin fa-lg fa-fw"></i></a> -->
+          <a
+            href="http://www.reddit.com/submit?url=https://rainbowhunt.com/?stormy&title=Rain%20generator"
+            target="_blank"
+            ><i class="fa fa-reddit-alien fa-lg fa-fw"></i
+          ></a>
+          <a data-id="fb"><i class="fa fa-facebook fa-lg fa-fw"></i></a>
+        </div>
+      </nav>
+
+      <div class="slideshow">
+        <canvas
+          width="1"
+          height="1"
+          id="container"
+          style="position: absolute"
+        ></canvas>
+        <!-- Best Rain -->
+        <div class="slide" id="slide-1" data-weather="rain"></div>
+
+        <!-- Sunny -->
+        <div class="slide" id="slide-3" data-weather="sunny"></div>
+
+        <!-- Drizzle -->
+        <div class="slide" id="slide-2" data-weather="drizzle"></div>
+
+        <!-- Fallout -->
+        <div class="slide" id="slide-4" data-weather="fallout"></div>
+
+        <nav class="slideshow__nav" id="controls">
+          <div id="jp_container_3">
+            <!-- <div class="jp-volume-bar3" style="display:none;" id="slvolume3"></div> -->
+            <div class="marginal" id="slvolume3">
+              <input
+                id="my-input3"
+                type="text"
+                data-slider="true"
+                value="0.8"
+                data-slider-highlight="true"
+                data-slider-vertical="true"
+              />
+            </div>
+            <a
+              href="javascript:;"
+              aria-label="Light rain"
+              class="jp-play hint--bottom"
+              id="shower3"
+              ><img src="img/rain.png" class="knop" style="opacity: 0.6" alt=""
+            /></a>
+            <a href="javascript:;" class="jp-pause" id="hider3"
+              ><img src="img/rain.png" class="knop" alt=""
+            /></a>
+          </div>
+
+          <div id="jp_container_2">
+            <div class="marginal" id="slvolume2">
+              <input
+                id="my-input2"
+                type="text"
+                data-slider="true"
+                value="0.8"
+                data-slider-highlight="true"
+                data-slider-vertical="true"
+              />
+            </div>
+            <a
+              href="javascript:;"
+              aria-label="Raindrops hitting a window"
+              class="jp-play hint--bottom"
+              id="shower2"
+              ><img
+                src="img/window.png"
+                class="knop"
+                style="opacity: 0.6"
+                alt=""
+            /></a>
+            <a href="javascript:;" class="jp-pause" id="hider2"
+              ><img src="img/window.png" class="knop" alt=""
+            /></a>
+          </div>
+
+          <div id="jp_container_1">
+            <div class="marginal2" id="slvolume1">
+              <input
+                id="my-input1"
+                type="text"
+                data-slider="true"
+                value="0.8"
+                data-slider-highlight="true"
+                data-slider-vertical="true"
+              />
+            </div>
+            <a
+              href="javascript:;"
+              aria-label="Rainstorm"
+              class="jp-play hint--bottom"
+              id="shower1"
+              ><img
+                src="img/rain_heavy.png"
+                class="knop"
+                style="opacity: 0.6"
+                alt=""
+            /></a>
+            <a href="javascript:;" class="jp-pause" id="hider1"
+              ><img src="img/rain_heavy.png" class="knop" alt=""
+            /></a>
+          </div>
+
+          <div id="jp_container_4">
+            <div class="marginal" id="slvolume4">
+              <input
+                id="my-input4"
+                type="text"
+                data-slider="true"
+                value="0.8"
+                data-slider-highlight="true"
+                data-slider-vertical="true"
+              />
+            </div>
+            <a
+              href="javascript:;"
+              aria-label="Splashing rainfall"
+              class="jp-play hint--bottom"
+              id="shower4"
+              ><img
+                src="img/splash.png"
+                class="knop"
+                style="opacity: 0.6"
+                alt=""
+            /></a>
+            <a href="javascript:;" class="jp-pause" id="hider4"
+              ><img src="img/splash.png" class="knop" alt=""
+            /></a>
+          </div>
+
+          <div id="jp_container_5">
+            <div class="marginal" id="slvolume5">
+              <input
+                id="my-input5"
+                type="text"
+                data-slider="true"
+                value="0.8"
+                data-slider-highlight="true"
+                data-slider-vertical="true"
+              />
+            </div>
+            <a
+              href="javascript:;"
+              aria-label="Thunder"
+              class="jp-play hint--bottom"
+              id="shower5"
+              ><img
+                src="img/thunderstorm.png"
+                class="knop"
+                style="opacity: 0.6"
+                alt=""
+            /></a>
+            <a href="javascript:;" class="jp-pause" id="hider5"
+              ><img src="img/thunderstorm.png" class="knop" alt=""
+            /></a>
+          </div>
+        </nav>
+
+        <div class="just-demos2" id="daytime">
+          <a href="#slide-1" class="btn" style="font-size: 16px">
+            &nbsp; &nbsp; Day &nbsp; </a
+          ><a
+            href="#slide-3"
+            id="stopall"
+            aria-label="No, please let it rain!"
+            class="btn hint--top"
+            style="font-size: 16px; border-radius: 0px"
+            >Stop</a
+          ><a href="#slide-4" class="btn2" style="font-size: 16px">
+            &nbsp; Night &nbsp; &nbsp;
+          </a>
+        </div>
+
+        <div class="just-demos3">
+          <a
+            href="https://defonic.com"
+            class="btn"
+            style="font-size: 16px; border-radius: 40px"
+          >
+            &nbsp; &nbsp; Nature sounds &nbsp; &nbsp;
+          </a>
+        </div>
+
+        <!-- <div class="just-demos3 hide">
+<p>More sounds on <a href="https://hipstersound.com/ambience.html"><img src="img/logo-sound.png" width="175" height="35" style="margin-bottom: -16px;" alt=""></a></p>	
+</div>	 -->
+      </div>
+      <p class="nosupport">
+        Sorry, your browser doesn't support WebGL! Check out our minimalist
+        version.
+      </p>
+
+      <!-- <div id="footer">				
+</div> -->
+    </div>
+
+    <!-- Share buttons by Cubecamp.ru  www.cubecamp.ru/articles/share/cubecamp.html -->
+    <div
+      id="addbar"
+      class="share-btn"
+      data-url="https://rainbowhunt.com"
+      data-title="RainbowHunt"
+      data-desc="Ultimate rain simulator."
+    >
+      <span>
+        &copy; 2021 Rainbowhunt.
+        <a href="credits.html" target="_blank">Credits, attributions</a> |
+      </span>
+      <a data-id="fb" class="hide2"><i class="fa fa-facebook fa-fw"></i></a>
+      <a data-id="tw" class="hide2"><i class="fa fa-twitter fa-fw"></i></a>
+    </div>
+
+    <!-- Script from MrWidow  https://stackoverflow.com/questions/16510110/enable-dragging-the-volume-slider-in-jplayer-2-3-0 -->
+    <!-- and Hide-Show slider -->
+    <script>
+      $("#my-input1").bind(
+        "slider:ready slider:changed",
+        function (event, data) {
+          $(".jp-jplayer1").jPlayer("volume", data.value.toFixed(3));
+        }
+      );
+
+      $("#my-input2").bind(
+        "slider:ready slider:changed",
+        function (event, data) {
+          $(".jp-jplayer2").jPlayer("volume", data.value.toFixed(3));
+        }
+      );
+
+      $("#my-input3").bind(
+        "slider:ready slider:changed",
+        function (event, data) {
+          $(".jp-jplayer3").jPlayer("volume", data.value.toFixed(3));
+        }
+      );
+
+      $("#my-input4").bind(
+        "slider:ready slider:changed",
+        function (event, data) {
+          $(".jp-jplayer4").jPlayer("volume", data.value.toFixed(3));
+        }
+      );
+
+      $("#my-input5").bind(
+        "slider:ready slider:changed",
+        function (event, data) {
+          $(".jp-jplayer5").jPlayer("volume", data.value.toFixed(3));
+        }
+      );
+
+      $("#my-input6").bind(
+        "slider:ready slider:changed",
+        function (event, data) {
+          $(".jp-jplayer6").jPlayer("volume", data.value.toFixed(3));
+        }
+      );
+
+      $("#my-input7").bind(
+        "slider:ready slider:changed",
+        function (event, data) {
+          $(".jp-jplayer7").jPlayer("volume", data.value.toFixed(3));
+        }
+      );
+
+      $("#my-input8").bind(
+        "slider:ready slider:changed",
+        function (event, data) {
+          $(".jp-jplayer8").jPlayer("volume", data.value.toFixed(3));
+        }
+      );
+
+      $("#hider1").click(function () {
+        $("#slvolume1").fadeOut();
+      });
+      $("#shower1").click(function () {
+        $("#slvolume1").fadeIn();
+      });
+
+      $("#hider2").click(function () {
+        $("#slvolume2").fadeOut();
+      });
+      $("#shower2").click(function () {
+        $("#slvolume2").fadeIn();
+      });
+
+      $("#hider3").click(function () {
+        $("#slvolume3").fadeOut();
+      });
+      $("#shower3").click(function () {
+        $("#slvolume3").fadeIn();
+      });
+
+      $("#hider4").click(function () {
+        $("#slvolume4").fadeOut();
+      });
+      $("#shower4").click(function () {
+        $("#slvolume4").fadeIn();
+      });
+
+      $("#hider5").click(function () {
+        $("#slvolume5").fadeOut();
+      });
+      $("#shower5").click(function () {
+        $("#slvolume5").fadeIn();
+      });
+
+      $("#stopall").click(function () {
+        $.jPlayer.pause();
+        $(
+          "#slvolume1, #slvolume2, #slvolume3, #slvolume4, #slvolume5"
+        ).fadeOut();
+        $("#forest")[0].play();
+      });
+
+      $("#hideui").click(function () {
+        $("#controls").css("visibility", "hidden");
+        $("#topbar").css("visibility", "hidden");
+        $("#daytime").css("visibility", "hidden");
+        $("#footer").css("visibility", "hidden");
+      });
+      $("#showui").click(function () {
+        $("#controls").css("visibility", "visible");
+        $("#topbar").css("visibility", "visible");
+        $("#daytime").css("visibility", "visible");
+        $("#footer").css("visibility", "visible");
+      });
+    </script>
+
+    <!-- Classie - class helper functions by @desandro https://github.com/desandro/classie -->
+    <script src="menu/js/classie.js"></script>
+    <script>
+      var menuRight = document.getElementById("cbp-spmenu-s2"),
+        showRight = document.getElementById("showRight"),
+        body = document.body;
+
+      showRight.onclick = function () {
+        classie.toggle(this, "active");
+        classie.toggle(menuRight, "cbp-spmenu-open");
+        disableOther("showRight");
+      };
+
+      function disableOther(button) {
+        if (button !== "showRight") {
+          classie.toggle(showRight, "disabled");
+        }
+      }
+    </script>
+
+    <script src="js/index.min.js"></script>
+    <script src="slider/simple-slider-vertical.js"></script>
+    <script type="text/javascript" src="js/share.js"></script>
+
+    <!-- Font awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css"
+    />
+  </body>
+</html>
