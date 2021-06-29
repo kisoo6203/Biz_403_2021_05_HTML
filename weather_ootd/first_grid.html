@@ -13,7 +13,8 @@
       }
 
       body {
-        background: linear-gradient(130deg, #7389d0, #eebdc3);
+        /*background: linear-gradient(130deg, #7389d0, #eebdc3);*/
+
         background-attachment: fixed;
       }
 
@@ -97,7 +98,7 @@
 
       .header h1,
       h4 {
-        color: white;
+        color: rgb(190, 136, 92);
         text-shadow: 0px 0px 20px rgb(234 237 176);
       }
 
@@ -182,6 +183,7 @@
         left: 7%;
         right: 7%;
         bottom: 5%;
+<<<<<<< HEAD
         border-width: 1px 1px 0;
       }
       figure.snip1200 figcaption.o {
@@ -192,6 +194,18 @@
         bottom: 5%;
         border-width: 1px 1px 0;
       }
+=======
+        border-width: 1px 1px 0;
+      }
+      figure.snip1200 figcaption.o {
+        position: absolute;
+        top: 5%;
+        left: 7%;
+        right: 7%;
+        bottom: 5%;
+        border-width: 1px 1px 0;
+      }
+>>>>>>> 83f5104a94391c9267b8523e9eaeca239f64b977
 
       figure.snip1200 .heading {
         overflow: hidden;
@@ -199,6 +213,7 @@
         transform: translateY(50%);
         position: absolute;
         bottom: 50%;
+<<<<<<< HEAD
         width: 100%;
       }
       figure.snip1200 .heading_o {
@@ -209,6 +224,18 @@
         bottom: 15%;
         width: 100%;
       }
+=======
+        width: 100%;
+      }
+      figure.snip1200 .heading_o {
+        overflow: hidden;
+        -webkit-transform: translateY(50%);
+        transform: translateY(50%);
+        position: absolute;
+        bottom: 15%;
+        width: 100%;
+      }
+>>>>>>> 83f5104a94391c9267b8523e9eaeca239f64b977
       figure.snip1200:hover .heading {
         bottom: 0;
       }
@@ -350,11 +377,26 @@
   </head>
 
   <body>
+    <video
+      id="intro-video"
+      src="/common/teaser/video/sudal.mp4"
+      autoplay
+      loop
+      muted
+      preload="auto"
+      playsinline
+    ></video>
     <div class="container">
       <div class="login">
         <label>ID</label><input type="text" placeholder="ID를 입력하세요" />
         <label>PW</label><input type="password" placeholder="PW를 입력하세요" />
+<<<<<<< HEAD
         <button class="lg"><a href="../weather_ootd/logout.html">login</a></button>
+=======
+        <button class="lg">
+          <a href="../weather_ootd/logout.html">login</a>
+        </button>
+>>>>>>> 83f5104a94391c9267b8523e9eaeca239f64b977
         <button class="jo"><a href="../weather_ootd/join.html">Join</a></button>
       </div>
 
@@ -459,6 +501,7 @@
   </body>
   <script>
     /* 왜 안되지?? */
+<<<<<<< HEAD
     document.querySelector("button.lg").addEventListener("click", function (ev) {
       alert("접속하였습니다");
     });
@@ -467,3 +510,17 @@
     });
   </script>
 </html>
+=======
+    document
+      .querySelector("button.lg")
+      .addEventListener("click", function (ev) {
+        alert("접속하였습니다");
+      });
+    document
+      .querySelector("button.jo")
+      .addEventListener("click", function (ev) {
+        alert("회원가입을 진행합니다");
+      });
+  </script>
+</html>
+>>>>>>> 83f5104a94391c9267b8523e9eaeca239f64b977
