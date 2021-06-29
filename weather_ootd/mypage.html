@@ -102,7 +102,7 @@
           <table></table>
           <div class="af">
             <label> 지역선택 </label>
-            <select name="city">
+            <select id="city">
               <option value="1">선택</option>
               <option value="1">서울</option>
               <option value="1">대전</option>
@@ -128,9 +128,23 @@
   <script>
     document.addEventListener("DOMContentLoaded", () => {
       document.querySelector("button").addEventListener("click", (ev) => {
-        alert("개인정보를 수정합니다");
+        alert("개인정보 수정완료");
         document.location.href =
-          "http://127.0.0.1:5501/weather_ootd/first3.html";
+          "http://127.0.0.1:5501/weather_ootd/logout.html";
+      });
+    });
+    document.addEventListener("DOMContentLoaded", () => {
+      document.querySelector("select#city").addEventListener("change", (ev) => {
+        alert("지역구를 선택해주세요");
+
+        window.open(
+          /* 회원가입 팝업창 생성 */
+
+          "popup.html",
+          "popup01",
+          "width=500, height=500, fullscreen=yes",
+          "scrollbars= 0, toolbar=0, menubar=no"
+        );
       });
     });
   </script>
