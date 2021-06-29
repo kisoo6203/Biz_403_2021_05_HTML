@@ -10,6 +10,7 @@
     body {
       background: linear-gradient(130deg, #7389d0, #eebdc3);
       background-attachment: fixed;
+      border: 2px solid blue;
     }
     h1,
     h4 {
@@ -21,23 +22,33 @@
       text-align: center;
       font-size: 70px;
       height: 50px;
+      border: 2px solid green;
     }
     h4 {
       font-size: 28px;
       text-align: center;
+      border: 2px solid green;
     }
     section {
       /* 개인정보 등록하는 부분을 감싼 옅은 선 */
       display: grid;
       justify-items: center;
+      border: 2px solid green;
     }
     fieldset {
       /* 개인정보 등록하는 부분을 감싼 옅은 선 */
       border-radius: 20px;
       display: grid;
       justify-items: center;
+      border: 2px solid green;
     }
-
+    div.qq {
+      display: flex;
+      border: 2px solid green;
+    }
+    section input.check {
+      width: 30%;
+    }
     section label {
       /* input박스 위치정렬 */
       display: inline-block;
@@ -69,6 +80,7 @@
       /* 칼럼별 글씨크기 */
       color: white;
       font-weight: 900;
+      margin: 70px;
     }
 
     p {
@@ -90,7 +102,15 @@
     <section>
       <fieldset>
         <div class="as">
-          <div class="ad"><label>ID </label><input type="text" /></div>
+          <div class="qq">
+            <label>ID </label><input type="text" />
+            <input
+              class="check"
+              type="button"
+              name="IDcheck"
+              value="아이디 확인"
+            />
+          </div>
           <div class="ad"><label>PW </label><input type="password" /></div>
           <div class="ad">
             <label>PW(chcek) </label><input type="password" />
