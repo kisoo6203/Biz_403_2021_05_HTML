@@ -5,13 +5,53 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>회원가입</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   </head>
   <style>
-    * {
-      margin: 10;
-      padding: 10;
+    *,
+    *:before,
+    *:after {
+      box-sizing: border-box;
     }
 
+    .split {
+      width: 750px;
+      height: 468px;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      perspective: 400px;
+      cursor: pointer;
+    }
+    .split:before {
+      content: "CLICK";
+      color: #777;
+      letter-spacing: 1px;
+      font-size: 10px;
+      position: absolute;
+      bottom: -30px;
+      left: 50%;
+      transform: translate(-50%);
+    }
+    .split img {
+      height: auto;
+      width: 100%;
+      opacity: 0;
+    }
+    .split div {
+      position: absolute;
+      z-index: 1;
+      background-repeat: no-repeat;
+      transform: rotateY(-50deg) scale(0.5);
+      opacity: 0;
+      transform-origin: bottom;
+      transition: all 0.6s cubic-bezier(0.71, 0.05, 0.09, 0.91);
+    }
+    .split.active div {
+      opacity: 1;
+      transform: rotate(0deg) translateY(0);
+    }
     body {
       background: linear-gradient(130deg, #7389d0, #eebdc3);
       background-attachment: fixed;
@@ -189,30 +229,78 @@
       </form>
     </section>
   </body>
+
   <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      document.querySelector("button").addEventListener("click", (ev) => {
-        alert("회원가입을 환영합니다!");
-        alert("상세 날씨 페이지로 이동합니다");
-        document.location.href =
-          "http://127.0.0.1:5501/weather_ootd/logout.html";
-      });
-    });
-    document.addEventListener("DOMContentLoaded", () => {
-      document
-        .querySelector("select.textForm")
-        .addEventListener("change", (ev) => {
-          alert("상세주소를 선택해주세요");
+    var Split = function () {
+      this.$t = $(".split");
+      this.gridX = 6;
+      this.gridY = 4;
+      this.w = this.$t.width();
+      this.h = this.$t.height();
+      this.img = $("img", this.$t).attr("src");
+      this.delay = 0.05;
 
-          window.open(
-            /* 회원가입 팝업창 생성 */
+      this.create = function () {
+        $("div", this.$t).remove();
 
-            "popup.html",
-            "popup01",
-            "width=500, height=400, fullscreen=yes",
-            "scrollbars= 0, toolbar=0, menubar=no"
-          );
-        });
-    });
+        for (x = 0; x < this.gridX; x++) {
+          for (y = 0; y < this.gridY; y++) {
+            var width = ((this.w / this.gridX) * 101) / this.w + "%",
+              height = ((this.h / this.gridY) * 101) / this.h + "%",
+              top = ((this.h / this.gridY) * y * 100) / this.h + "%",
+              left = ((this.w / this.gridX) * x * 100) / this.w + "%",
+              bgPosX = -((this.w / this.gridX) * x) + "px",
+              bgPosY = -((this.h / this.gridY) * y) + "px";
+
+            $("<div />")
+              .css({
+                top: top,
+                left: left,
+                width: width,
+                height: height,
+                backgroundImage: "url(" + this.img + ")",
+                backgroundPosition: bgPosX + " " + bgPosY,
+                backgroundSize: this.w + "px",
+                transitionDelay: x * this.delay + y * this.delay + "s",
+              })
+              .appendTo(this.$t);
+          }
+        }
+      };
+
+      this.create();
+
+      this.$t
+        .on("click", function () {
+          $(this).toggleClass("active");
+        })
+        .click();
+    };
+
+    window.onload = function () {
+      var split = new Split();
+      var gui = (function datgui() {
+        var gui = new dat.GUI();
+        gui
+          .add(split, "gridX", 1, 20)
+          .step(1)
+          .onChange(function (newValue) {
+            split.create();
+          });
+        gui
+          .add(split, "gridY", 1, 20)
+          .step(1)
+          .onChange(function (newValue) {
+            split.create();
+          });
+        gui
+          .add(split, "delay", 0, 0.3)
+          .step(0.01)
+          .onChange(function (newValue) {
+            split.create();
+          });
+        return gui;
+      })();
+    };
   </script>
 </html>
