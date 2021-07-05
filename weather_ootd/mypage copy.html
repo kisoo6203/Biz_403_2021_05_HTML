@@ -122,9 +122,7 @@
     }
   </style>
   <body>
-    <div class="split">
-      <img src="5.jpg" />
-      <h1>Sign Up</h1>
+      <h1>Changing Information</h1>
       <h4>WEATHER & OOTD</h4>
       <section id="join_wrap">
         <form action="@@@.html" method="get">
@@ -137,9 +135,8 @@
                     type="text"
                     id="user_id"
                     class="textForm"
-                    placeholder="ID를 입력..."
+                    placeholder="ID값 담기"
                   />
-                  <input type="button" value="중복확인" class="btn" />
                 </td>
               </tr>
               <tr>
@@ -149,7 +146,7 @@
                     type="password"
                     id="user_pwd"
                     class="textForm"
-                    placeholder="비밀번호를 입력..."
+                    placeholder="수정할 비밀번호 입력"
                   />
                 </td>
               </tr>
@@ -160,7 +157,7 @@
                     type="password"
                     id="user_pwd"
                     class="textForm"
-                    placeholder="비밀번호를 재확인..."
+                    placeholder="수정할 비밀번호를 재확인..."
                   />
                 </td>
               </tr>
@@ -187,87 +184,13 @@
               </tr>
               <tr>
                 <th>상세주소</th>
-                <td><input class="textForm" /></td>
+                <td><input class="textForm" placeholder="수정한 주소값 담기" /></td>
               </tr>
             </table>
-            <button class="btn">가입하기</button>
+            <button class="btn">정보수정</button>
           </fieldset>
         </form>
       </section>
     </div>
   </body>
-
-  <script>
-    var Split = function () {
-      this.$t = $(".split");
-      this.gridX = 6;
-      this.gridY = 4;
-      this.w = this.$t.width();
-      this.h = this.$t.height();
-      this.img = $("img", this.$t).attr("src");
-      this.delay = 0.05;
-
-      this.create = function () {
-        $("div", this.$t).remove();
-
-        for (x = 0; x < this.gridX; x++) {
-          for (y = 0; y < this.gridY; y++) {
-            var width = ((this.w / this.gridX) * 101) / this.w + "%",
-              height = ((this.h / this.gridY) * 101) / this.h + "%",
-              top = ((this.h / this.gridY) * y * 100) / this.h + "%",
-              left = ((this.w / this.gridX) * x * 100) / this.w + "%",
-              bgPosX = -((this.w / this.gridX) * x) + "px",
-              bgPosY = -((this.h / this.gridY) * y) + "px";
-
-            $("<div />")
-              .css({
-                top: top,
-                left: left,
-                width: width,
-                height: height,
-                backgroundImage: "url(" + this.img + ")",
-                backgroundPosition: bgPosX + " " + bgPosY,
-                backgroundSize: this.w + "px",
-                transitionDelay: x * this.delay + y * this.delay + "s",
-              })
-              .appendTo(this.$t);
-          }
-        }
-      };
-
-      this.create();
-
-      this.$t
-        .on("click", function () {
-          $(this).toggleClass("active");
-        })
-        .click();
-    };
-
-    window.onload = function () {
-      var split = new Split();
-      var gui = (function datgui() {
-        var gui = new dat.GUI();
-        gui
-          .add(split, "gridX", 1, 20)
-          .step(1)
-          .onChange(function (newValue) {
-            split.create();
-          });
-        gui
-          .add(split, "gridY", 1, 20)
-          .step(1)
-          .onChange(function (newValue) {
-            split.create();
-          });
-        gui
-          .add(split, "delay", 0, 0.3)
-          .step(0.01)
-          .onChange(function (newValue) {
-            split.create();
-          });
-        return gui;
-      })();
-    };
-  </script>
 </html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title></title>
+  </head>
+  <style>
+    figure.snip0015 {
+      font-family: "Raleway", Arial, sans-serif;
+      color: #fff;
+      position: relative;
+      overflow: hidden;
+      margin: 10px;
+      min-width: 220px;
+      max-width: 100%;
+      max-height: 220px;
+      width: 100%;
+      background: #000000;
+      text-align: center;
+    }
+    figure.snip0015 * {
+      -webkit-box-sizing: border-box;
+      box-sizing: border-box;
+    }
+    figure.snip0015 img {
+      opacity: 1;
+      width: 100%;
+      -webkit-transition: opacity 0.35s;
+      transition: opacity 0.35s;
+    }
+    figure.snip0015 figcaption {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      padding: 3em 3em;
+      width: 100%;
+      height: 100%;
+    }
+
+    figure.snip0015 h2,
+    figure.snip0015 p {
+      margin: 0 0 5px;
+      opacity: 0;
+      -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+      transition: opacity 0.35s, -webkit-transform 0.35s, -moz-transform 0.35s,
+        -o-transform 0.35s, transform 0.35s;
+    }
+
+    figure.snip0015 a {
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      position: absolute;
+      color: #ffffff;
+    }
+    figure.snip0015:hover img {
+      opacity: 0.35;
+    }
+    figure.snip0015:hover figcaption h2 {
+      opacity: 1;
+      -webkit-transform: translate3d(0%, 0%, 0);
+      transform: translate3d(0%, 0%, 0);
+      -webkit-transition-delay: 0.3s;
+      transition-delay: 0.2s;
+    }
+    figure.snip0015:hover figcaption p {
+      opacity: 0.9;
+      -webkit-transition-delay: 0.6s;
+      transition-delay: 0.4s;
+    }
+    figure.snip0015:hover figcaption::before {
+      background: rgba(255, 255, 255, 0);
+      top: 30px;
+      bottom: 30px;
+      opacity: 1;
+      -webkit-transition-delay: 0s;
+      transition-delay: 0s;
+    }
+
+    /* Demo purposes only */
+  </style>
+  <body>
+    <figure class="snip0015">
+      <img
+        src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sample39.jpg"
+        alt="sample39"
+      />
+      <figcaption>
+        <h2>How many <span>boards</span></h2>
+        <p>Would the Mongols hoard, if the Mongol hordes got bored?.</p>
+        <a href="#"></a>
+      </figcaption>
+    </figure>
+  </body>
+</html>
