@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title></title>
+  </head>
+  <style>
+    @import url(https://fonts.googleapis.com/css?family=Raleway:500,900);
+
+    figure.snip1432 * {
+      -webkit-box-sizing: border-box;
+      box-sizing: border-box;
+      -webkit-transition: all 0.6s ease;
+      transition: all 0.6s ease;
+    }
+
+    figure.snip1432 figcaption {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+    figure.snip1432 figcaption > div {
+      height: 50%;
+      overflow: hidden;
+      width: 100%;
+      position: relative;
+    }
+    figure.snip1432 h2,
+    figure.snip1432 h3 {
+      margin: 0;
+      position: absolute;
+      left: 0;
+      padding: 0 30px;
+      text-transform: uppercase;
+    }
+
+    figure.snip1432 h3 {
+      font-size: 1em;
+      bottom: 0;
+      font-weight: 500;
+    }
+    figure.snip1432 h3:nth-of-type(2) {
+      opacity: 0;
+      -webkit-transform: translateY(150%);
+      transform: translateY(150%);
+    }
+
+    figure.snip1432:hover figcaption h3:first-of-type,
+    figure.snip1432.hover figcaption h3:first-of-type {
+      -webkit-transform: translateY(150%);
+      transform: translateY(150%);
+      opacity: 0;
+    }
+    figure.snip1432:hover figcaption h3:nth-of-type(2),
+    figure.snip1432.hover figcaption h3:nth-of-type(2) {
+      opacity: 1;
+      -webkit-transform: translateY(0%);
+      transform: translateY(0%);
+    }
+  </style>
+  <body>
+    <figure class="snip1432">
+      <figcaption>
+        <div>
+          <h3>In teaching others</h3>
+          <h3>We teach ourselves</h3>
+        </div>
+        <div>
+          <h2>Ingredia Nutrisha</h2>
+        </div>
+      </figcaption>
+      <a href="#"></a>
+    </figure>
+  </body>
+  <script>
+    /* Demo purposes only */
+    $(".hover").mouseleave(function () {
+      $(this).removeClass("hover");
+    });
+  </script>
+</html>
